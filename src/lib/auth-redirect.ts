@@ -1,5 +1,5 @@
 /** Primary production origin (emails, SEO). OAuth must use the tab origin — see getAuthSiteOrigin. */
-export const PRODUCTION_SITE_ORIGIN = "https://tambuaafrica.com";
+export const PRODUCTION_SITE_ORIGIN = "https://tambua-africa.com";
 
 /**
  * Origin for auth redirects in the current browser tab.

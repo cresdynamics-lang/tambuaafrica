@@ -27,7 +27,7 @@ export function normalizePublicImagePath(src: string | null | undefined): string
       const isThisSite =
         host === "localhost" ||
         host === "127.0.0.1" ||
-        host === "tambuaafrica.com" ||
+        host === "tambua-africa.com" ||
         host === "tambua-africa.com" ||
         host.endsWith(".vercel.app");
       if (isThisSite && u.pathname.startsWith("/images/")) {

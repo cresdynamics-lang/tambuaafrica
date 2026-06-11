@@ -17,9 +17,9 @@ All auth emails (signup confirm, password reset) are sent by **Tambua Africa Tou
 
 | Field | Value |
 |-------|--------|
-| Site URL | `https://tambuaafrica.com` or `https://tambua-africa.com` |
-| Redirect URLs | `https://tambuaafrica.com/**`, `https://tambua-africa.com/**` |
-| | `https://tambuaafrica.com/auth/confirm`, `https://tambuaafrica.com/auth/callback`, `https://tambuaafrica.com/reset-password` |
+| Site URL | `https://tambua-africa.com` or `https://tambua-africa.com` |
+| Redirect URLs | `https://tambua-africa.com/**`, `https://tambua-africa.com/**` |
+| | `https://tambua-africa.com/auth/confirm`, `https://tambua-africa.com/auth/callback`, `https://tambua-africa.com/reset-password` |
 | | Same paths on `tambua-africa.com` and `http://localhost:8080` for local dev |
 
 **Google sign-in:** see [GOOGLE_AUTH_SETUP.md](./GOOGLE_AUTH_SETUP.md).
@@ -37,9 +37,9 @@ RESEND_API_KEY=re_xxxx
 SEND_EMAIL_HOOK_SECRET=v1,whsec_xxxx
 
 AUTH_FROM_EMAIL=Tambua Africa Tours & Safaris <onboarding@resend.dev>
-# After Resend domain verify: Tambua Africa Tours & Safaris <info@tambuaafrica.com>
+# After Resend domain verify: Tambua Africa Tours & Safaris <info@tambua-africa.com>
 
-AUTH_REPLY_TO=info@tambuaafrica.com
+AUTH_REPLY_TO=info@tambua-africa.com
 AUTH_SKIP_EMAIL_HOOK=false
 VITE_SITE_URL=https://tambua-africa.com
 ```
@@ -63,7 +63,7 @@ Password rules in the app: 8+ chars, upper, lower, number, symbol.
 
 ## No confirmation email?
 
-**Most common cause:** Resend test mode only delivers to your Resend signup email until **tambuaafrica.com** is verified. See [RESEND_DOMAIN_SETUP.md](./RESEND_DOMAIN_SETUP.md).
+**Most common cause:** Resend test mode only delivers to your Resend signup email until **tambua-africa.com** is verified. See [RESEND_DOMAIN_SETUP.md](./RESEND_DOMAIN_SETUP.md).
 
 Until the domain is verified, check **tambuaafrica@gmail.com** for `[Tambua Africa] Confirm link for user@…` and forward the link.
 

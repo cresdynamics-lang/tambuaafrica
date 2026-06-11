@@ -12,4 +12,4 @@ Disallow: /diagnostics
 Disallow: /payment-success
 Disallow: /auth/
 
-Sitemap: https://tambuaafrica.com/sitemap.xml
+Sitemap: https://tambua-africa.com/sitemap.xml

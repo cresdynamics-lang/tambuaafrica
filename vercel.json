@@ -7,13 +7,19 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.tambuaafrica.com" }],
-      "destination": "https://tambuaafrica.com/:path*",
+      "has": [{ "type": "host", "value": "www.tambua-africa.com" }],
+      "destination": "https://tambua-africa.com/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.tambua-africa.com" }],
+      "has": [{ "type": "host", "value": "tambuaafrica.com" }],
+      "destination": "https://tambua-africa.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.tambuaafrica.com" }],
       "destination": "https://tambua-africa.com/:path*",
       "permanent": true
     }

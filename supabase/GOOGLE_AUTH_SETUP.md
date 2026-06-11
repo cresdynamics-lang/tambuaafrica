@@ -9,7 +9,7 @@ The app supports **Continue with Google** on `/login` and `/signup`. Users retur
 3. **Authorized JavaScript origins** (add each environment you use):
    - `http://localhost:8080` (Vite dev server in this project)
    - `https://tambua-africa.com`
-   - `https://tambuaafrica.com`
+   - `https://tambua-africa.com`
 4. **Authorized redirect URIs** (required — Supabase handles the OAuth exchange):
    - `https://tulnrphqshxiybdreqec.supabase.co/auth/v1/callback`
 5. Copy **Client ID** and **Client secret**.
@@ -21,7 +21,7 @@ The app supports **Continue with Google** on `/login` and `/signup`. Users retur
 3. **Authentication** → **URL Configuration** → add to **Redirect URLs**:
    - `http://localhost:8080/auth/callback`
    - `https://tambua-africa.com/auth/callback`
-   - `https://tambuaafrica.com/auth/callback`
+   - `https://tambua-africa.com/auth/callback`
 
 ## 3. Database (Google display names on profiles)
 
@@ -37,13 +37,13 @@ This sets `profiles.full_name` from Google’s `name` metadata when users sign u
 
 The PKCE secret is stored in **browser localStorage per domain**. It is lost if:
 
-- You start Google sign in on `tambua-africa.com` but return on `tambuaafrica.com` (or the reverse).
+- You start Google sign in on `tambua-africa.com` but return on `tambua-africa.com` (or the reverse).
 - You use `www.` and the site redirects to non-www (or the reverse) mid flow.
 
 **Fix:** Always use one URL for the live site. Add **both** callback URLs in Supabase if you use two domains:
 
 - `https://tambua-africa.com/auth/callback`
-- `https://tambuaafrica.com/auth/callback`
+- `https://tambua-africa.com/auth/callback`
 
 Start and finish Google sign in on the **same** hostname.
 

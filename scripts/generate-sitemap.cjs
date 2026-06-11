@@ -16,7 +16,7 @@ const envPath = path.join(root, ".env");
 const snapshotPath = path.join(root, "public/data/site-snapshot.json");
 const outPath = path.join(root, "public/sitemap.xml");
 
-const SITE_ORIGIN = "https://tambuaafrica.com";
+const SITE_ORIGIN = "https://tambua-africa.com";
 
 /** Public indexable routes (no auth, no admin). */
 const STATIC_PAGES = [

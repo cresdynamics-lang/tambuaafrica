@@ -19,3 +19,6 @@ export function isAdminMailbox(email: string | null | undefined): boolean {
 
 /** Primary company inbox for Resend / booking & inquiry notifications */
 export const COMPANY_INBOX_EMAIL = TEAM_CONTACT_EMAILS[0];
+
+/** Comma-separated list for user-facing copy (auth errors, SEO, etc.). */
+export const TEAM_CONTACT_EMAILS_DISPLAY = TEAM_CONTACT_EMAILS.join(", ");

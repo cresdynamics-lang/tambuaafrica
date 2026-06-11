@@ -209,7 +209,7 @@ const getNotifyInbox = () =>
 async function sendWithResend(payload: HookPayload) {
   const resend = new Resend(resendApiKey());
   const confirmUrl = buildVerifyUrl(payload);
-  const replyTo = Deno.env.get("AUTH_REPLY_TO")?.trim() || "info@tambuaafrica.com";
+  const replyTo = Deno.env.get("AUTH_REPLY_TO")?.trim() || "info@tambua-africa.com";
   let from = getFromAddress();
   const userEmail = payload.user.email;
 
@@ -238,7 +238,7 @@ async function sendWithResend(payload: HookPayload) {
     const action = payload.email_data.email_action_type;
     const notifyHtml = `<!DOCTYPE html><html><body style="font-family:sans-serif;">
       <p><strong>Resend test mode:</strong> confirmation for <code>${escapeHtml(userEmail)}</code> could not be delivered directly.</p>
-      <p>Verify <strong>tambuaafrica.com</strong> at <a href="https://resend.com/domains">resend.com/domains</a> so customers receive mail automatically.</p>
+      <p>Verify <strong>tambua-africa.com</strong> at <a href="https://resend.com/domains">resend.com/domains</a> so customers receive mail automatically.</p>
       <p>Until then, forward this link to the customer:</p>
       <p><a href="${confirmUrl}">${confirmUrl}</a></p>
       <p style="color:#78716c;font-size:12px;">Action: ${escapeHtml(action)}</p>
@@ -296,7 +296,7 @@ Deno.serve(async (req) => {
       console.error("Resend error:", msg);
       return fail(
         500,
-        `Resend failed: ${msg}. Verify tambuaafrica.com at resend.com/domains or check AUTH_NOTIFY_EMAIL.`,
+        `Resend failed: ${msg}. Verify tambua-africa.com at resend.com/domains or check AUTH_NOTIFY_EMAIL.`,
       );
     }
   } catch (err) {

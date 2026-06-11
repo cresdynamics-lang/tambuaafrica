@@ -1,3 +1,5 @@
+import { TEAM_CONTACT_EMAILS_DISPLAY } from "@/lib/admin-email";
+
 /** User-friendly messages for Supabase Auth errors. */
 export function formatAuthError(error: unknown): string {
   const message =
@@ -12,7 +14,7 @@ export function formatAuthError(error: unknown): string {
   }
 
   if (/email not confirmed|not confirmed/i.test(message)) {
-    return "This account is not active yet. Try signing up again, use Google sign in, or contact info@tambuaafrica.com for help.";
+    return `This account is not active yet. Try signing up again, use Google sign in, or contact ${TEAM_CONTACT_EMAILS_DISPLAY} for help.`;
   }
 
   if (/invalid login credentials|invalid credentials/i.test(message)) {
@@ -24,7 +26,7 @@ export function formatAuthError(error: unknown): string {
   }
 
   if (/code verifier|pkce/i.test(message)) {
-    return "Google sign in was interrupted. Use the same website address you started from (tambua-africa.com or tambuaafrica.com, not both), then try again.";
+    return "Google sign in was interrupted. Use the same website address you started from (https://tambua-africa.com), then try again.";
   }
 
   if (/hook requires authorization/i.test(message)) {
@@ -34,7 +36,7 @@ export function formatAuthError(error: unknown): string {
   if (
     /hook|resend|send email|unexpected failure|error sending confirmation|500/i.test(message)
   ) {
-    return "We could not send the confirmation email right now. Your account may still be created: try signing in, or use Continue with Google. If sign in fails, contact info@tambuaafrica.com.";
+    return `We could not send the confirmation email right now. Your account may still be created: try signing in, or use Continue with Google. If sign in fails, contact ${TEAM_CONTACT_EMAILS_DISPLAY}.`;
   }
 
   if (/user already registered|already been registered/i.test(message)) {

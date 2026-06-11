@@ -18,7 +18,7 @@ Add in **Vercel → Project → Settings → Environment Variables** for **Produ
 |----------|-----------------|
 | `VITE_SUPABASE_URL` | `https://tulnrphqshxiybdreqec.supabase.co` |
 | `VITE_SUPABASE_PUBLISHABLE_KEY` | Supabase **anon** JWT (`eyJ...`) |
-| `VITE_SITE_URL` | `https://tambuaafrica.com` |
+| `VITE_SITE_URL` | `https://tambua-africa.com` |
 | `VITE_GA_MEASUREMENT_ID` | Optional: `G-XXXXXXXXXX` |
 
 Do **not** add `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`, or `SEND_EMAIL_HOOK_SECRET` to Vercel — those stay in Supabase Edge Function secrets only.
@@ -26,14 +26,14 @@ Do **not** add `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`, or `SEND_EMAIL_HOO
 ## 3. Custom domain
 
 1. Vercel → **Domains** → add **all** of these to the **same** project:
-   - `tambuaafrica.com`, `www.tambuaafrica.com`
+   - `tambua-africa.com`, `www.tambua-africa.com`
    - `tambua-africa.com`, `www.tambua-africa.com` (legacy; keep until DNS migration is done)
 2. DNS at your registrar → point each hostname to Vercel (A/CNAME as shown)
-3. `vercel.json` redirects `www` → non-`www` on each domain. **`tambua-africa.com` is not redirected to `tambuaafrica.com`** so `/images/...` keep working on the legacy hostname.
+3. `vercel.json` redirects `www` → non-`www` on each domain. **`tambua-africa.com` is not redirected to `tambua-africa.com`** so `/images/...` keep working on the legacy hostname.
 
-**Why images broke on `tambua-africa.com`:** A previous rule redirected every path (including `/images/...`) to `tambuaafrica.com`, where the apex host was not serving files yet → 404 for activity photos. The preview `*.vercel.app` URL had no such redirect, so images worked there.
+**Why images broke on `tambua-africa.com`:** A previous rule redirected every path (including `/images/...`) to `tambua-africa.com`, where the apex host was not serving files yet → 404 for activity photos. The preview `*.vercel.app` URL had no such redirect, so images worked there.
 
-If `https://tambuaafrica.com` still returns **404**, finish apex DNS in Vercel → Domains; use `https://tambua-africa.com` until then.
+If `https://tambua-africa.com` still returns **404**, finish apex DNS in Vercel → Domains; use `https://tambua-africa.com` until then.
 
 ## 4. Supabase (required for auth & data)
 
@@ -41,8 +41,8 @@ In **Supabase Dashboard → Authentication → URL Configuration**:
 
 | Setting | Value |
 |---------|--------|
-| **Site URL** | `https://tambuaafrica.com` (not `tambua-africa.com`) |
-| **Redirect URLs** | `https://tambuaafrica.com/auth/confirm`, `https://tambuaafrica.com/**`, `https://tambua-africa.com/auth/confirm`, `https://tambua-africa.com/**` |
+| **Site URL** | `https://tambua-africa.com` (not `tambua-africa.com`) |
+| **Redirect URLs** | `https://tambua-africa.com/auth/confirm`, `https://tambua-africa.com/**`, `https://tambua-africa.com/auth/confirm`, `https://tambua-africa.com/**` |
 
 If signup shows `redirect_to=...tambua-africa.com` or returns **500**, the Site URL is still wrong or the **Send Email** hook failed — see `supabase/AUTH_EMAIL_SETUP.md` and re-run `npm run setup:auth-email`.
 
@@ -57,8 +57,8 @@ Manual: `vercel --prod` from repo root (with Vercel CLI linked).
 
 ## 6. Post-deploy checks
 
-- [ ] https://tambuaafrica.com loads
+- [ ] https://tambua-africa.com loads
 - [ ] `/safaris`, `/contact`, `/blog` work (SPA routes)
 - [ ] Sign up → confirmation email → `/dashboard`
-- [ ] https://tambuaafrica.com/sitemap.xml
-- [ ] https://tambuaafrica.com/robots.txt
+- [ ] https://tambua-africa.com/sitemap.xml
+- [ ] https://tambua-africa.com/robots.txt

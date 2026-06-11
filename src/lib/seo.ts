@@ -1,5 +1,7 @@
+import { COMPANY_INBOX_EMAIL, TEAM_CONTACT_EMAILS } from "@/lib/admin-email";
+
 /** Canonical public site origin (must match production redirects and canonical links). */
-export const SITE_ORIGIN = "https://tambuaafrica.com";
+export const SITE_ORIGIN = "https://tambua-africa.com";
 
 export const SITE_NAME = "Tambua Africa Tours & Safaris";
 
@@ -104,7 +106,7 @@ export const SEO_BY_ROUTE: Record<string, RouteSeoEntry> = {
   "/contact": {
     title: "Contact Tambua Africa | Book a Kenya Safari | Nairobi, Kenya",
     description:
-      "Contact Tambua Africa Tours & Safaris in Nairobi, Kenya. Call +254 726 207 900 or email info@tambuaafrica.com to start planning your dream safari.",
+      `Contact Tambua Africa Tours & Safaris in Nairobi, Kenya. Call +254 726 207 900 or email ${TEAM_CONTACT_EMAILS.join(", ")} to start planning your dream safari.`,
   },
   "/services": {
     title: `Safari Services: Ticketing, Transfers & Lodges | ${SITE_NAME}`,
@@ -203,7 +205,8 @@ export const BUSINESS_NAP = {
   addressCountry: "KE",
   telephone: "+254726207900",
   telephoneDisplay: "+254 726 207 900",
-  email: "info@tambuaafrica.com",
+  email: COMPANY_INBOX_EMAIL,
+  emails: [...TEAM_CONTACT_EMAILS],
 } as const;
 
 export const SOCIAL_PROFILES = [
@@ -228,7 +231,7 @@ export const TRAVEL_AGENCY_JSON_LD = {
     addressCountry: BUSINESS_NAP.addressCountry,
   },
   telephone: BUSINESS_NAP.telephone,
-  email: BUSINESS_NAP.email,
+  email: BUSINESS_NAP.emails,
   sameAs: [...SOCIAL_PROFILES],
   openingHours: "Mo-Fr 08:00-17:00",
   priceRange: "$$$",

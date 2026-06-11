@@ -33,7 +33,7 @@ const AuthCallback = () => {
         setMessage(detail);
       },
       timeoutMessage:
-        "Sign in could not be completed. Open the site on one address only (for example always tambua-africa.com or always tambuaafrica.com), then try Google again.",
+        "Sign in could not be completed. Open the site at https://tambua-africa.com only (not a preview or legacy URL), then try Google again.",
     });
 
     return () => {

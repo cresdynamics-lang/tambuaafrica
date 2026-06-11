@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 import { useLocation } from "react-router-dom";
 import { toast } from "sonner";
 import { hasSupabaseEnv, supabase } from "@/integrations/supabase/client";
-import { isAdminMailbox } from "@/lib/admin-email";
+import { isAdminMailbox, TEAM_CONTACT_EMAILS_DISPLAY } from "@/lib/admin-email";
 import { EMAIL_CONFIRMATION_REQUIRED } from "@/lib/auth-config";
 import {
   getAuthSiteOrigin,
@@ -184,7 +184,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (signInError) {
         if (/not confirmed|email not confirmed/i.test(signInError.message)) {
           throw new Error(
-            "Your account was created but is waiting for activation. Wait a moment and try Sign in, or contact info@tambuaafrica.com.",
+            `Your account was created but is waiting for activation. Wait a moment and try Sign in, or contact ${TEAM_CONTACT_EMAILS_DISPLAY}.`,
           );
         }
         throw signInError;

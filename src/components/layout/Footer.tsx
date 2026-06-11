@@ -113,9 +113,17 @@ const Footer = () => {
                 </div>
                 <div>
                   <span className="block font-sans text-xs uppercase tracking-wider text-white/40 mb-1">Email</span>
-                  <a href={`mailto:${BUSINESS_NAP.email}`} className="font-sans text-sm text-white/80 hover:text-accent transition-colors">
-                    {BUSINESS_NAP.email}
-                  </a>
+                  <div className="space-y-0.5">
+                    {BUSINESS_NAP.emails.map((inbox) => (
+                      <a
+                        key={inbox}
+                        href={`mailto:${inbox}`}
+                        className="block font-sans text-sm text-white/80 hover:text-accent transition-colors"
+                      >
+                        {inbox}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </li>
             </ul>
